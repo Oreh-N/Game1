@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 99833682}
   - component: {fileID: 99833681}
   m_Layer: 5
-  m_Name: Button_Back
+  m_Name: BackButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 581185893}
   - component: {fileID: 581185892}
   m_Layer: 5
-  m_Name: Button_Settings
+  m_Name: SettingsButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1099645470}
   - component: {fileID: 1099645469}
   m_Layer: 5
-  m_Name: Button_Start
+  m_Name: StartButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 1772850177}
   - component: {fileID: 1772850176}
   m_Layer: 5
-  m_Name: Button_Exit
+  m_Name: ExitButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 1815366957}
   - component: {fileID: 1815366956}
   m_Layer: 5
-  m_Name: Button_Savings
+  m_Name: SavingsButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
