@@ -20,28 +20,32 @@ public class GameMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseGame)
-            {
-                Resume(); 
-            }
+            { Resume(); }
             else { Pause(); }
         }
     }
 
     public void Pause()
+    { Pause(pauseGameMenu); }
+
+    public void Resume()
+    { Resume(pauseGameMenu); }
+
+    public void Pause(GameObject gameObject)
     {
-        pauseGameMenu.SetActive(true);
+        gameObject.SetActive(true);
         Time.timeScale = 0f;
         pauseGame = true;
     }
 
-    public void Resume()
+    public void Resume(GameObject gameObject)
     {
-        pauseGameMenu.SetActive(false);
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
         pauseGame = false;
     }
 
-    public void LoadGameMenu()
+    public void LoadMenuScene()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
