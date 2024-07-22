@@ -5,15 +5,39 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed = 10;
-    //[SerializeField] private int health = 100;
-    [SerializeField] private float jumpForce = 0.7f;
+    [SerializeField] public float jumpForce = 0.7f;
+    [SerializeField] public int defence = 5;
+    [SerializeField] public int power = 10;
+    [SerializeField] public float speed = 10;
+    [SerializeField] public int health = 100;
+    [SerializeField] public int level = 1;
     private bool grounded;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
 
 
+
+    public void SavePlayerState()
+    { SavingSystem.SavePlayerState(this); }
+
+
+    public void LoadPlayerState()
+    {
+        PlayerData data = SavingSystem.LoadPlayerState();
+
+        level = data.level;
+        health = data.health;
+        speed = data.speed;
+        power = data.power;
+        defence = data.defence;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
