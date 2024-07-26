@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public float jumpForce = 0.7f;
+    [SerializeField] public float jumpForce = 11f;
     [SerializeField] public int defence = 5;
     [SerializeField] public int power = 10;
     [SerializeField] public float speed = 10;
     [SerializeField] public int health = 100;
     [SerializeField] public int level = 1;
-    private bool grounded;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private BoxCollider2D boxCollider2d;
+    [SerializeField] private LayerMask platformsLayerMask;    
 
 
 
     public void SavePlayerState()
     { SavingSystem.SavePlayerState(this); }
-
 
     public void LoadPlayerState()
     {
@@ -39,26 +39,23 @@ public class Player : MonoBehaviour
         transform.position = position;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Start()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Vector3 normal = collision.GetContact(0).normal;
-
-            if (normal == Vector3.up)
-            { grounded = true; }
-        }
+        rb = transform.GetComponent<Rigidbody2D>();
+        boxCollider2d = transform.GetComponent<BoxCollider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        { grounded = false; }
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            Jump();
+        if (Input.GetButton("Horizontal"))
+            Move();
     }
 
-
-    private void Run()
+    private void Move()
     {
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position += speed * dir * Time.deltaTime;
@@ -66,29 +63,12 @@ public class Player : MonoBehaviour
 
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButton("Jump"))
-            Jump();
-        if (Input.GetButton("Horizontal"))
-            Run();
-        
-    }
-
     private void Jump()
+    { rb.velocity = Vector2.up * jumpForce; }
+
+    private bool IsGrounded()
     {
-        if (grounded)
-        { rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); }
-        
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, platformsLayerMask);
+        return raycastHit2d.collider != null;
     }
 }
