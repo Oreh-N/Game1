@@ -10,11 +10,6 @@ public class GameMenu : MonoBehaviour
     public GameObject pauseGameMenu;
 
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
