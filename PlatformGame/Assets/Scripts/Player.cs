@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private BoxCollider2D boxCollider2d;
     [SerializeField] private LayerMask platformsLayerMask;    
-    private Vector2 boxSize = new Vector2 (0.1f, 1f);
+    private Vector2 boxSize = new Vector2 (1.5f, 1f);
 
 
 
@@ -93,7 +94,6 @@ public class Player : MonoBehaviour
             {
                 if (rc.IsInteractable())
                 {
-                    Debug.Log("Problem is down here 3");
                     rc.Interact();
                     return;
                 }

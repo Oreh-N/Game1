@@ -19,11 +19,6 @@ public class Looting : Interactable
         sr.sprite = close;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-
-    }
-
     public override void Interact()
     {
         if (isOpen)
