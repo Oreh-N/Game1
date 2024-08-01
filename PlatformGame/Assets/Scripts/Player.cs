@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject interactIcon;
+
     [SerializeField] public float jumpForce = 11f;
     [SerializeField] public int defence = 5;
     [SerializeField] public int power = 10;
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sprite;
     private BoxCollider2D boxCollider2d;
     [SerializeField] private LayerMask platformsLayerMask;    
+    private Vector2 boxSize = new Vector2 (0.1f, 1f);
 
 
 
@@ -53,6 +56,8 @@ public class Player : MonoBehaviour
             Jump();
         if (Input.GetButton("Horizontal"))
             Move();
+        if (Input.GetKeyDown(KeyCode.E))
+            CheckInteraction();
     }
 
     private void Move()
@@ -70,5 +75,29 @@ public class Player : MonoBehaviour
     {
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, platformsLayerMask);
         return raycastHit2d.collider != null;
+    }
+
+    public void ShowInteractableIcon()
+    { interactIcon.SetActive(true); }
+
+    public void HideInteractableIcon()
+    { interactIcon.SetActive(false); }
+
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize, 0, Vector2.zero);
+
+        if (hits.Length > 0)
+        {
+            foreach (RaycastHit2D rc in hits)
+            {
+                if (rc.IsInteractable())
+                {
+                    Debug.Log("Problem is down here 3");
+                    rc.Interact();
+                    return;
+                }
+            }
+        }
     }
 }
