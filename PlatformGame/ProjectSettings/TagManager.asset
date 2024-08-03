@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: GameMenu
+    uniqueID: 1237132983
+    locked: 0
+  - name: TransAnim
+    uniqueID: 1597024269
+    locked: 0
