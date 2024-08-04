@@ -401,11 +401,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.429248, y: 0.40835}
   m_EdgeRadius: 0
---- !u!4 &859172910 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4289877662310678580, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
-  m_PrefabInstance: {fileID: 1402568081}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &859172913 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5704552869822894644, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
@@ -808,19 +803,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1638952317}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4289877662310678580, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.07
+      value: -7.5869746
       objectReference: {fileID: 0}
     - target: {fileID: 4289877662310678580, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 0.19141024
       objectReference: {fileID: 0}
     - target: {fileID: 4289877662310678580, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.427166
       objectReference: {fileID: 0}
     - target: {fileID: 4289877662310678580, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -986,6 +981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goNextLevel: 0
   levelName: Game
+  door: {fileID: 0}
 --- !u!61 &1566295164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1333,7 +1329,6 @@ Transform:
   m_Children:
   - {fileID: 1099327653}
   - {fileID: 1566295162}
-  - {fileID: 859172910}
   - {fileID: 1994592952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1573,3 +1568,4 @@ SceneRoots:
   - {fileID: 1601775285}
   - {fileID: 1638952317}
   - {fileID: 154215402}
+  - {fileID: 1402568081}
