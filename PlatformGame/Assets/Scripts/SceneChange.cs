@@ -7,36 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : Interactable
 {
-    public string sceneName;
+    public string nxtSceneName;
     private Animator anim;
 
     private bool canBeOpen;
 
 
-    private void Start()
-    {
-        anim.GetComponent<Animator>();
-    }
+    //private void Start()
+    //{ anim.GetComponent<Animator>(); }
 
     public override void Interact()
     {
-        anim.SetTrigger("Close");
+        SceneManager.LoadSceneAsync(nxtSceneName);
+        //Debug.Log("WE ARE TRYING TO INTERACT");
+        //anim.SetTrigger("Close");
     }
 
     public void OnFadeComplete()
     {
-        SceneManager.LoadSceneAsync(sceneName);
-        anim.SetTrigger("Open");
+        SceneManager.LoadSceneAsync(nxtSceneName);
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        if (goNextLevel)
-    //        { SceneController.instance.NextLevel(); }
-    //        else
-    //        { SceneController.instance.LoadLevel(levelName); }
-    //    }
-    //}
 }

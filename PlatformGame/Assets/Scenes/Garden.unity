@@ -123,71 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &154215402
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2403457471658791479, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_Name
-      value: SceneTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 3223547109423438574, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407586905471952416, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1944802559}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.5425181
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.33450162
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.449071
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6544372881746376877, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 907c3489a4330b040acc21bb21db3104, type: 3}
 --- !u!1 &322960910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7757835287900749660, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
@@ -979,9 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ccf0f143305614e98203fd0a2eaf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goNextLevel: 0
-  levelName: Game
-  door: {fileID: 0}
+  nxtSceneName: Game
 --- !u!61 &1566295164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1328,8 +1261,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1099327653}
-  - {fileID: 1566295162}
   - {fileID: 1994592952}
+  - {fileID: 1566295162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770388680
@@ -1567,5 +1500,4 @@ SceneRoots:
   - {fileID: 1605072938}
   - {fileID: 1601775285}
   - {fileID: 1638952317}
-  - {fileID: 154215402}
   - {fileID: 1402568081}
