@@ -7,6 +7,22 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private int health = 100;
+    //private GameObject bloodEffect;
+
+
+    private void Update()
+    {
+        if (health <= 0)
+        { Destroy(gameObject); }
+    }
+
+    public void GetHurt(int damage)
+    {
+        //Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        health -= damage; Debug.Log("Enemy is hurt");
+    }
+
     private enum State
     { Roaming }
 

@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController  : MonoBehaviour
 {
     public GameObject interactIcon;
 
@@ -82,7 +83,10 @@ public class Player : MonoBehaviour
     { interactIcon.SetActive(true); }
 
     public void HideInteractableIcon()
-    { interactIcon.SetActive(false); }
+    {
+        if (!interactIcon.IsDestroyed())
+        interactIcon.SetActive(false);
+    }
 
     private void CheckInteraction()
     {

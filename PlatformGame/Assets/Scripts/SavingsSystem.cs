@@ -9,7 +9,7 @@ public class SavingSystem
     static string path = Application.persistentDataPath + "/savings";
 
 
-    public static void SavePlayerState(Player player)
+    public static void SavePlayerState(PlayerController player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         using (FileStream stream = new FileStream(path, FileMode.Create))

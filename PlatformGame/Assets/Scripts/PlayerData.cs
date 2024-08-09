@@ -12,7 +12,7 @@ public class PlayerData
     public int level;
     public float[] position;
 
-    public PlayerData(Player player) 
+    public PlayerData(PlayerController player) 
     {
         level = player.level;
         power = player.power;

@@ -8,6 +8,7 @@ TagManager:
   - Text
   - Box
   - Interactable
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - 
   - Items
-  - Characters
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Characters
+    uniqueID: 839323333
     locked: 0
   - name: GameMenu
     uniqueID: 1237132983
