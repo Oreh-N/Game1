@@ -21,6 +21,7 @@ public class PlayerController  : MonoBehaviour
     private BoxCollider2D boxCollider2d;
     [SerializeField] private LayerMask platformsLayerMask;    
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
+    public SpriteRenderer sword;
 
 
 
@@ -67,7 +68,7 @@ public class PlayerController  : MonoBehaviour
         Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         transform.position += speed * dir * Time.deltaTime;
         sprite.flipX = dir.x < 0.0f;
-
+        sword.flipY = dir.x < 0.0f;
     }
 
     private void Jump()
