@@ -12,7 +12,7 @@ public class PlayerController  : MonoBehaviour
     [SerializeField] public float jumpForce = 11f;
     [SerializeField] public int defence = 5;
     [SerializeField] public int power = 10;
-    [SerializeField] public float speed = 10;
+    [SerializeField] public float speed = 5;
     [SerializeField] public int health = 100;
     [SerializeField] public int level = 1;
 
@@ -65,10 +65,18 @@ public class PlayerController  : MonoBehaviour
 
     private void Move()
     {
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
-        transform.position += speed * dir * Time.deltaTime;
-        sprite.flipX = dir.x < 0.0f;
-        sword.flipY = dir.x < 0.0f;
+        float dir = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(dir * speed, rb.velocity.y);
+
+        if (dir != 0)
+        {
+            Vector3 scaler = transform.localScale;
+            scaler.x *= dir;
+            transform.localScale = scaler;
+        }
+        //transform.position += speed * dir * Time.deltaTime;
+        //sprite.flipX = dir.x < 0.0f;
+        //sword.flipY = dir.x < 0.0f;
     }
 
     private void Jump()
