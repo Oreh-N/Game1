@@ -25,6 +25,7 @@ public class PlayerController  : MonoBehaviour
     public SpriteRenderer sword;
     private bool goingRight;
 
+    private Animator anim;
 
 
     public void SavePlayerState()
@@ -49,6 +50,7 @@ public class PlayerController  : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -57,18 +59,30 @@ public class PlayerController  : MonoBehaviour
 
     void Update()
     {
+        if (IsGrounded())
+        { anim.SetBool("isJumping", false); }
+        else
+        { anim.SetBool("isJumping", true); }
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         { 
-            Jump(); 
-            if (goingRight == false && Input.GetAxis("Horizontal") > 0)
-            { Flip(); }
-            else if (goingRight && Input.GetAxis("Horizontal") < 0)
-            { Flip(); }
+            Jump();
+            anim.SetTrigger("takeOff");
         }
         if (Input.GetButton("Horizontal"))
+        {
             Move();
+            if (goingRight && Input.GetAxis("Horizontal") > 0)
+                Flip();
+            else if (goingRight == false && Input.GetAxis("Horizontal") < 0)
+                Flip();
+        }
         if (Input.GetKeyDown(KeyCode.E))
             CheckInteraction();
+        if (Input.GetAxis("Horizontal") == 0)
+            anim.SetBool("isRunning", false);
+        else
+            anim.SetBool("isRunning", true);
     }
 
     private void Move()
@@ -102,6 +116,11 @@ public class PlayerController  : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+
+        if (Input.GetAxis("Horizontal") > 0)
+        { transform.eulerAngles = new Vector3(0, 180, 0); }
+        else if (Input.GetAxis("Horizontal") < 0)
+        { transform.eulerAngles = new Vector3(0, 0, 0); }
     }
 
     private bool IsGrounded()
