@@ -19,9 +19,11 @@ public class PlayerController  : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private BoxCollider2D boxCollider2d;
-    [SerializeField] private LayerMask platformsLayerMask;    
+    [SerializeField] private LayerMask platformsLayerMask;
+    [SerializeField] private LayerMask enemyLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
     public SpriteRenderer sword;
+    private bool goingRight;
 
 
 
@@ -56,7 +58,13 @@ public class PlayerController  : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-            Jump();
+        { 
+            Jump(); 
+            if (goingRight == false && Input.GetAxis("Horizontal") > 0)
+            { Flip(); }
+            else if (goingRight && Input.GetAxis("Horizontal") < 0)
+            { Flip(); }
+        }
         if (Input.GetButton("Horizontal"))
             Move();
         if (Input.GetKeyDown(KeyCode.E))
@@ -66,7 +74,10 @@ public class PlayerController  : MonoBehaviour
     private void Move()
     {
         float dir = Input.GetAxis("Horizontal");
+
         rb.velocity = new Vector2(dir * speed, rb.velocity.y);
+        /*
+         * rb.velocity = new Vector2(dir * speed, rb.velocity.y);
 
         if (dir != 0)
         {
@@ -74,18 +85,30 @@ public class PlayerController  : MonoBehaviour
             scaler.x *= dir;
             transform.localScale = scaler;
         }
-        //transform.position += speed * dir * Time.deltaTime;
-        //sprite.flipX = dir.x < 0.0f;
-        //sword.flipY = dir.x < 0.0f;
+        */
+        /*
+        transform.position += speed * dir * Time.deltaTime;
+        sprite.flipX = dir.x < 0.0f;
+        sword.flipY = dir.x < 0.0f;
+        */
     }
 
     private void Jump()
     { rb.velocity = Vector2.up * jumpForce; }
 
+    void Flip()
+    {
+        goingRight = !goingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
+
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, platformsLayerMask);
-        return raycastHit2d.collider != null;
+        RaycastHit2D raycastHit2dPlatform = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, platformsLayerMask);
+        RaycastHit2D raycastHit2dEnemy = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, enemyLayerMask);
+        return raycastHit2dPlatform.collider != null || raycastHit2dEnemy.collider != null;
     }
 
     public void ShowInteractableIcon()

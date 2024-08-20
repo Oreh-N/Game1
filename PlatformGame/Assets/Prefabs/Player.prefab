@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4289877662310678580}
   - component: {fileID: 4120691863771015373}
   - component: {fileID: 1024405552049578622}
-  - component: {fileID: 5704552869822894644}
   - component: {fileID: 5036145147028617220}
   - component: {fileID: 4912271415669378881}
+  - component: {fileID: 731857324789442645}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -108,28 +108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1498546, y: 0.14448324}
   m_EdgeRadius: 0
---- !u!114 &5704552869822894644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7972236080090274641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dbb23c1eba86024fb4b480230447504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactIcon: {fileID: 0}
-  jumpForce: 12
-  defence: 5
-  power: 10
-  speed: 10
-  health: 100
-  level: 1
-  platformsLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!212 &5036145147028617220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -202,3 +180,29 @@ MonoBehaviour:
     m_Bits: 2048
   damage: 20
   attackAnim: {fileID: 0}
+--- !u!114 &731857324789442645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972236080090274641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbb23c1eba86024fb4b480230447504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactIcon: {fileID: 0}
+  jumpForce: 11
+  defence: 5
+  power: 10
+  speed: 5
+  health: 100
+  level: 1
+  platformsLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  sword: {fileID: 0}

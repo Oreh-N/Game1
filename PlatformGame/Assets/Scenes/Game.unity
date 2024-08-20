@@ -2080,17 +2080,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1005888306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5704552869822894644, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
-  m_PrefabInstance: {fileID: 2341624749310668595}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dbb23c1eba86024fb4b480230447504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1119460001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,7 +4157,7 @@ PrefabInstance:
     - target: {fileID: 7340721811203689353, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1005888306}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4323,6 +4312,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 731857324789442645, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 546486265}
+    - target: {fileID: 731857324789442645, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+      propertyPath: interactIcon
+      value: 
+      objectReference: {fileID: 1233505007}
+    - target: {fileID: 731857324789442645, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 731857324789442645, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+      propertyPath: platformsLayerMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 1024405552049578622, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_Size.x
       value: 0.11957137
@@ -4419,6 +4424,10 @@ PrefabInstance:
       propertyPath: interactIcon
       value: 
       objectReference: {fileID: 1233505007}
+    - target: {fileID: 5704552869822894644, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 7972236080090274641, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4530,11 +4539,11 @@ PrefabInstance:
     - target: {fileID: 4134667923900828769, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1005888306}
+      objectReference: {fileID: 0}
     - target: {fileID: 5487834288641500737, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1005888306}
+      objectReference: {fileID: 0}
     - target: {fileID: 6046950870081863923, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4558,7 +4567,7 @@ PrefabInstance:
     - target: {fileID: 9072050517717775952, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1005888306}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
