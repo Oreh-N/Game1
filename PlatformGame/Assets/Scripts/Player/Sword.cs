@@ -23,14 +23,13 @@ public class Sword : MonoBehaviour
             {
                 attackAnim.SetTrigger("Attack");
 
-                Vector3 attackDirection = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
-                attackPos.localPosition = new Vector3(Mathf.Abs(attackPos.localPosition.x) * Mathf.Sign(transform.localScale.x), attackPos.localPosition.y, attackPos.localPosition.z);
+                //Vector3 attackDirection = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
+                //attackPos.localPosition = new Vector3(Mathf.Abs(attackPos.localPosition.x) * Mathf.Sign(transform.localScale.x), attackPos.localPosition.y, attackPos.localPosition.z);
 
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+
                 for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
                     enemiesToDamage[i].GetComponent<EnemyController>().GetHurt(damage);
-                }
             }
             timeBtwAttack = startTimeBtwAttack;
         }

@@ -43,11 +43,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Bg
     uniqueID: 3446305849
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Characters
     uniqueID: 839323333

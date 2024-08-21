@@ -69,6 +69,7 @@ public class PlayerController  : MonoBehaviour
             Jump();
             anim.SetTrigger("takeOff");
         }
+
         if (Input.GetButton("Horizontal"))
         {
             Move();
@@ -77,8 +78,10 @@ public class PlayerController  : MonoBehaviour
             else if (goingRight == false && Input.GetAxis("Horizontal") < 0)
                 Flip();
         }
+
         if (Input.GetKeyDown(KeyCode.E))
             CheckInteraction();
+
         if (Input.GetAxis("Horizontal") == 0)
             anim.SetBool("isRunning", false);
         else
@@ -88,23 +91,7 @@ public class PlayerController  : MonoBehaviour
     private void Move()
     {
         float dir = Input.GetAxis("Horizontal");
-
         rb.velocity = new Vector2(dir * speed, rb.velocity.y);
-        /*
-         * rb.velocity = new Vector2(dir * speed, rb.velocity.y);
-
-        if (dir != 0)
-        {
-            Vector3 scaler = transform.localScale;
-            scaler.x *= dir;
-            transform.localScale = scaler;
-        }
-        */
-        /*
-        transform.position += speed * dir * Time.deltaTime;
-        sprite.flipX = dir.x < 0.0f;
-        sword.flipY = dir.x < 0.0f;
-        */
     }
 
     private void Jump()
@@ -116,11 +103,6 @@ public class PlayerController  : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
-
-        if (Input.GetAxis("Horizontal") > 0)
-        { transform.eulerAngles = new Vector3(0, 180, 0); }
-        else if (Input.GetAxis("Horizontal") < 0)
-        { transform.eulerAngles = new Vector3(0, 0, 0); }
     }
 
     private bool IsGrounded()
