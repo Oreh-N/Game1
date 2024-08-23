@@ -8,16 +8,18 @@ using Random = UnityEngine.Random;
 public class EnemyController : MonoBehaviour
 {
     private enum State
-    { Roaming }
+    { Roaming, Dying }
 
     private State state;
     private EnemyPathfinding enemyPathfinding;
     [SerializeField] private int health = 100;
-    //private GameObject bloodEffect;
+    private Animator anim;
+    private bool goingRight;
 
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         enemyPathfinding = GetComponent<EnemyPathfinding>();
         state = State.Roaming;
     }
@@ -26,12 +28,24 @@ public class EnemyController : MonoBehaviour
     { StartCoroutine(RoamingRoutine()); }
 
     private void Update()
-    { if (health <= 0) Destroy(gameObject); }
+    {
+        if (health <= 0)
+        {
+            state = State.Dying;
+            anim.SetBool("isDying", true);
+        }
+    }
+
+    public void DestroyEnemy()
+    { Destroy(gameObject); }
 
     public void GetHurt(int damage)
     {
-        //Instantiate(bloodEffect, transform.position, Quaternion.identity);
-        health -= damage; Debug.Log("Enemy is hurt");
+        if (state == State.Dying)
+            return;
+
+        anim.SetTrigger("getHurt");
+        health -= damage;
     }
 
     private IEnumerator RoamingRoutine()
@@ -39,9 +53,31 @@ public class EnemyController : MonoBehaviour
         while (state == State.Roaming)
         {
             float roamPosition = GetRoamingPosition();
+            
+
+            if (roamPosition == 0)
+                anim.SetBool("isRunning", false);
+            else
+            {
+                if (roamPosition > 0 && goingRight)
+                    Flip();
+                else if (roamPosition < 0 && !goingRight)
+                    Flip();
+
+                anim.SetBool("isRunning", true);
+            }
+
             enemyPathfinding.MoveTo(roamPosition);
             yield return new WaitForSeconds(2f);
         }
+    }
+
+    void Flip()
+    {
+        goingRight = !goingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
     }
 
     private float GetRoamingPosition()

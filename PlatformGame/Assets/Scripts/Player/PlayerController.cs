@@ -75,7 +75,7 @@ public class PlayerController  : MonoBehaviour
             Move();
             if (goingRight && Input.GetAxis("Horizontal") > 0)
                 Flip();
-            else if (goingRight == false && Input.GetAxis("Horizontal") < 0)
+            else if (!goingRight && Input.GetAxis("Horizontal") < 0)
                 Flip();
         }
 
