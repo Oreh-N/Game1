@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 6356804445858114486}
   - component: {fileID: 4316108502051725884}
   m_Layer: 5
-  m_Name: BagCellEmptyer
+  m_Name: BagCellEmptyer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,11 +707,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7087498324409739472}
+  m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2998657, y: -70.7001}
+  m_AnchoredPosition: {x: 322.70007, y: 409.2999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8792720191845929789
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1263201119579790711}
         m_TargetAssemblyTypeName: Cell, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 4000833164550437346}
   - component: {fileID: 8194423719884906519}
   m_Layer: 5
-  m_Name: BagCellEmptyer
+  m_Name: BagCellEmptyer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,11 +839,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 861665521929950620}
+  m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2998657, y: -70.7001}
+  m_AnchoredPosition: {x: 592.7001, y: 409.2999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3703330075696269541
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2121562335965723248}
         m_TargetAssemblyTypeName: Cell, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 8102316826001069577}
   - component: {fileID: 5219478431893896266}
   m_Layer: 5
-  m_Name: BagCellEmptyer
+  m_Name: BagCellEmptyer_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,11 +971,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2934023578990510813}
+  m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2998657, y: -70.7001}
+  m_AnchoredPosition: {x: 232.7001, y: 409.2999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2770787094316365342
@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7401886046764954791}
         m_TargetAssemblyTypeName: Cell, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
@@ -1181,8 +1181,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1644312134957028980}
+  m_Children: []
   m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -2116,7 +2115,7 @@ GameObject:
   - component: {fileID: 5979652677177050067}
   - component: {fileID: 6321210026768889028}
   m_Layer: 5
-  m_Name: BagCellEmptyer
+  m_Name: BagCellEmptyer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2134,11 +2133,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6129920422502651660}
+  m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2998657, y: -70.7001}
+  m_AnchoredPosition: {x: 502.70007, y: 409.2999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4127762345674959271
@@ -2223,7 +2222,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8463023125865848589}
         m_TargetAssemblyTypeName: Cell, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
@@ -2594,8 +2593,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1710912207118713508}
+  m_Children: []
   m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -2898,8 +2896,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3978328769752114130}
+  m_Children: []
   m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -2988,8 +2985,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 131249857768824648}
+  m_Children: []
   m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -3152,10 +3148,15 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 861665521929950620}
+  - {fileID: 1644312134957028980}
   - {fileID: 6129920422502651660}
+  - {fileID: 3978328769752114130}
   - {fileID: 2113018158584512051}
+  - {fileID: 131249857768824648}
   - {fileID: 7087498324409739472}
+  - {fileID: 1710912207118713508}
   - {fileID: 2934023578990510813}
+  - {fileID: 2794998988957840904}
   m_Father: {fileID: 2826613273580345791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4091,7 +4092,7 @@ GameObject:
   - component: {fileID: 1370936025639853562}
   - component: {fileID: 486271591560813431}
   m_Layer: 5
-  m_Name: BagCellEmptyer
+  m_Name: BagCellEmptyer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4109,11 +4110,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2113018158584512051}
+  m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2998657, y: -70.7001}
+  m_AnchoredPosition: {x: 412.70007, y: 409.2999}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5716816367527606841
@@ -4198,7 +4199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2068519157503064395}
         m_TargetAssemblyTypeName: Cell, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
@@ -4240,8 +4241,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2794998988957840904}
+  m_Children: []
   m_Father: {fileID: 1649485847616086449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
