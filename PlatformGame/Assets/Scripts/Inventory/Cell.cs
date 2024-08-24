@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
     private Inventory inventory;
     public int id;
+
 
     void Start()
     { inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>(); }

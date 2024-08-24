@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 0}
-  jumpForce: 14
+  jumpForce: 12
   defence: 5
   power: 10
   speed: 5
