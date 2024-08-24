@@ -8,11 +8,16 @@ public class Sword : MonoBehaviour
     public float startTimeBtwAttack = 0.3f;
 
 
+    private Animator anim;
+    public LayerMask whatIsEnemy;
     public Transform attackPos;
     public float attackRange;
-    public LayerMask whatIsEnemy;
     public int damage = 20;
 
+
+
+    private void Start()
+    { anim = GetComponent<Animator>(); }
 
     private void Update()
     {
@@ -21,7 +26,7 @@ public class Sword : MonoBehaviour
             if (Input.GetKey(KeyCode.Alpha0))
             {
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
-
+                anim.SetTrigger("hit");
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                     enemiesToDamage[i].GetComponent<EnemyController>().GetHurt(damage);
             }
