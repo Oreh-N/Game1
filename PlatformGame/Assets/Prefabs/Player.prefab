@@ -959,12 +959,9 @@ MonoBehaviour:
   speed: 5
   health: 100
   level: 1
-  platformsLayerMask:
+  obstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 512
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2304
   sword: {fileID: 1925259688454572961}
 --- !u!95 &6223667081590846422
 Animator:

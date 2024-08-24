@@ -19,8 +19,7 @@ public class PlayerController  : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private BoxCollider2D boxCollider2d;
-    [SerializeField] private LayerMask platformsLayerMask;
-    [SerializeField] private LayerMask enemyLayerMask;
+    [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
     public SpriteRenderer sword;
     private bool goingRight;
@@ -107,9 +106,8 @@ public class PlayerController  : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2dPlatform = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, platformsLayerMask);
-        RaycastHit2D raycastHit2dEnemy = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, enemyLayerMask);
-        return raycastHit2dPlatform.collider != null || raycastHit2dEnemy.collider != null;
+        RaycastHit2D raycastHit2dPlatform = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0.1f, obstaclesLayerMask);
+        return raycastHit2dPlatform.collider != null;
     }
 
     public void ShowInteractableIcon()
