@@ -11,8 +11,10 @@ public class EnemyController : MonoBehaviour
     { Roaming, Dying }
 
     private State state;
+
     private EnemyPathfinding enemyPathfinding;
     [SerializeField] private int health = 100;
+    public PlayerController player;
     private Animator anim;
     private bool goingRight;
 
@@ -37,7 +39,10 @@ public class EnemyController : MonoBehaviour
     }
 
     public void DestroyEnemy()
-    { Destroy(gameObject); }
+    { 
+        player.UpdateLevel();
+        Destroy(gameObject);
+    }
 
     public void GetHurt(int damage)
     {

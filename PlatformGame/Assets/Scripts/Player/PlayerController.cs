@@ -4,29 +4,30 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController  : MonoBehaviour
 {
     public GameObject interactIcon;
 
     [SerializeField] public float jumpForce = 11f;
-    [SerializeField] public int defence = 5;
-    [SerializeField] public int power = 10;
-    [SerializeField] public float speed = 5;
+    [SerializeField] public int maxHealth = 100;
     [SerializeField] public int health = 100;
-    [SerializeField] public int level = 1;
+    [SerializeField] public int defence = 5;
+    [SerializeField] public float speed = 5;
+    [SerializeField] public int power = 10;
+    private int level = 1;
 
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-    private BoxCollider2D boxCollider2d;
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
+    private BoxCollider2D boxCollider2d;
     public SpriteRenderer sword;
     private bool goingRight;
-
+    private Rigidbody2D rb;
     private Animator anim;
-
-
+    public Text lvlText;
+    
+    
     public void SavePlayerState()
     { SavingSystem.SavePlayerState(this); }
 
@@ -49,10 +50,9 @@ public class PlayerController  : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
+        rb = transform.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -134,5 +134,16 @@ public class PlayerController  : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UpdateLevel()
+    {
+        level++;
+        lvlText.text = level.ToString();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 }
