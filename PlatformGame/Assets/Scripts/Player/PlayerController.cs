@@ -10,13 +10,13 @@ public class PlayerController  : MonoBehaviour
 {
     public GameObject interactIcon;
 
-    [SerializeField] public float jumpForce = 11f;
-    [SerializeField] public int maxHealth = 100;
-    [SerializeField] public int health = 100;
-    [SerializeField] public int defence = 5;
-    [SerializeField] public float speed = 5;
-    [SerializeField] public int power = 10;
-    private int level = 1;
+    public float jumpForce = 11f;
+    public int maxHealth = 100;
+    public int health = 100;
+    public int defence = 5;
+    public float speed = 5;
+    public int damage = 10;
+    public int level = 1;
 
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
@@ -38,7 +38,7 @@ public class PlayerController  : MonoBehaviour
         level = data.level;
         health = data.health;
         speed = data.speed;
-        power = data.power;
+        damage = data.power;
         defence = data.defence;
 
         Vector3 position;
@@ -145,5 +145,6 @@ public class PlayerController  : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        anim.SetTrigger("takeDamage");
     }
 }

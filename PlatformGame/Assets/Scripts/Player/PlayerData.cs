@@ -15,7 +15,7 @@ public class PlayerData
     public PlayerData(PlayerController player) 
     {
         level = player.level;
-        power = player.power;
+        power = player.damage;
         health = player.health;
         defence = player.defence;
         speed = player.speed;

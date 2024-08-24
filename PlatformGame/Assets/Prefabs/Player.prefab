@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7664871415869863156}
   - component: {fileID: 1925259688454572961}
-  - component: {fileID: 7261133116241912353}
   m_Layer: 10
   m_Name: Sword_sketch
   m_TagString: Untagged
@@ -85,27 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7261133116241912353
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953097303251421275}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cfc9f65a0079a044f9f94fd5f5e134da, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2006318787482002026
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +917,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   damage: 20
-  attackAnim: {fileID: 7261133116241912353}
+  attackAnim: {fileID: 0}
 --- !u!114 &731857324789442645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,15 +932,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 0}
   jumpForce: 12
-  defence: 5
-  power: 10
-  speed: 5
+  maxHealth: 100
   health: 100
+  defence: 5
+  speed: 5
+  damage: 10
   level: 1
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 2304
   sword: {fileID: 1925259688454572961}
+  lvlText: {fileID: 0}
 --- !u!95 &6223667081590846422
 Animator:
   serializedVersion: 5
