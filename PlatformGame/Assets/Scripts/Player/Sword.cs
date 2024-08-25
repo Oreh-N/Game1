@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     private float timeBtwAttack;
-    public float startTimeBtwAttack = 0.3f;
+    public float startTimeBtwAttack = 0.4f;
 
 
     private Animator anim;

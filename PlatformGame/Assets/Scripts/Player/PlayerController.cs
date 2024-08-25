@@ -18,6 +18,7 @@ public class PlayerController  : MonoBehaviour
     public int damage = 10;
     public int level = 1;
 
+    public static PlayerController Instance;
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
     private BoxCollider2D boxCollider2d;
@@ -47,6 +48,9 @@ public class PlayerController  : MonoBehaviour
         position.z = data.position[2];
         transform.position = position;
     }
+
+    private void Awake()
+    { Instance = this; }
 
     void Start()
     {

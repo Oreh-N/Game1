@@ -17,10 +17,12 @@ public class EnemyController : MonoBehaviour
     public PlayerController player;
     private Animator anim;
     private bool goingRight;
+    private KnockBack knockBack;
 
 
     private void Awake()
     {
+        knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
         enemyPathfinding = GetComponent<EnemyPathfinding>();
         state = State.Roaming;
@@ -51,6 +53,7 @@ public class EnemyController : MonoBehaviour
 
         anim.SetTrigger("getHurt");
         health -= damage;
+        knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
     }
 
     private IEnumerator RoamingRoutine()
