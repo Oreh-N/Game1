@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     private State state;
 
-    private EnemyPathfinding enemyPathfinding;
+    private Wandering enemyPathfinding;
     [SerializeField] private int health = 100;
     public PlayerController player;
     private Animator anim;
@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
-        enemyPathfinding = GetComponent<EnemyPathfinding>();
+        enemyPathfinding = GetComponent<Wandering>();
         state = State.Roaming;
     }
 
