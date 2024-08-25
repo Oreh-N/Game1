@@ -14,10 +14,12 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anim;
 
     public PlayerController player;
+    private EnemyController enemy;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        enemy = GetComponent<EnemyController>();
     }
 
     private void Update()
@@ -31,9 +33,7 @@ public class MeleeEnemy : MonoBehaviour
                 coolDownTimer = 0;
                 anim.SetTrigger("meleeAttack");
             }
-
         }
-        
     }
 
     private bool PlayerInSight()
@@ -59,7 +59,10 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (PlayerInSight()) // if player still in hitbox
         {
+            enemy.state = EnemyController.State.Attacking;
             player.TakeDamage(damage);
         }
+        else
+            enemy.state = EnemyController.State.Roaming;
     }
 }

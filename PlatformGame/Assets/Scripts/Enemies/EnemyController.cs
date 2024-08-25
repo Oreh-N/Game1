@@ -7,15 +7,15 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
-    private enum State
-    { Roaming, Dying }
+    public enum State
+    { Roaming, Dying, Attacking }
 
-    private State state;
+    public State state;
 
     private EnemyPathfinding enemyPathfinding;
     [SerializeField] private int health = 100;
     public PlayerController player;
-    private Animator anim;
+    public Animator anim;
     private bool goingRight;
     private KnockBack knockBack;
 
