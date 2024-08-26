@@ -7,29 +7,23 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
-    private enum State
-    { Roaming, Dying }
+    public enum State
+    { Roaming, Dying, Patroling }
 
     private State state;
 
-    private Wandering enemyPathfinding;
     [SerializeField] private int health = 100;
     public PlayerController player;
-    private Animator anim;
-    private bool goingRight;
     private KnockBack knockBack;
-
-
+    private Animator anim;
+    
+    
     private void Awake()
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
-        enemyPathfinding = GetComponent<Wandering>();
-        state = State.Roaming;
+        state = State.Patroling;
     }
-
-    private void Start()
-    { StartCoroutine(RoamingRoutine()); }
 
     private void Update()
     {
@@ -56,38 +50,7 @@ public class EnemyController : MonoBehaviour
         knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
     }
 
-    private IEnumerator RoamingRoutine()
-    {
-        while (state == State.Roaming)
-        {
-            float roamPosition = GetRoamingPosition();
-            
+    public State GetState() { return state; }
 
-            if (roamPosition == 0)
-                anim.SetBool("isRunning", false);
-            else
-            {
-                if (roamPosition > 0 && goingRight)
-                    Flip();
-                else if (roamPosition < 0 && !goingRight)
-                    Flip();
-
-                anim.SetBool("isRunning", true);
-            }
-
-            enemyPathfinding.MoveTo(roamPosition);
-            yield return new WaitForSeconds(2f);
-        }
-    }
-
-    void Flip()
-    {
-        goingRight = !goingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
-    }
-
-    private float GetRoamingPosition()
-    { return Random.Range(-1f, 1f); }
+    public Animator GetAnimator() { return anim; } 
 }

@@ -4,26 +4,53 @@ using UnityEngine;
 
 public class Wandering : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-
-    private Rigidbody2D rb;
+    private EnemyPathfinding enemyPathfinding;
+    private EnemyController enemy;
+    private bool goingRight;
     public float moveDir;
-    private KnockBack knockBack;
+    
 
+    private void Start()
+    { StartCoroutine(RoamingRoutine()); }
 
     private void Awake()
     {
-        knockBack = GetComponent<KnockBack>();
-        rb = GetComponent<Rigidbody2D>();
+        enemyPathfinding = GetComponent<EnemyPathfinding>();
+        enemy = GetComponent<EnemyController>();
     }
 
-    void Update()
+    private IEnumerator RoamingRoutine()
     {
-        if (knockBack.gettingKnockedBack) { return; }
+        while (enemy.GetState() == EnemyController.State.Roaming)
+        {
+            float roamPosition = GetRoamingPosition();
 
-        rb.MovePosition(new Vector2(rb.position.x + moveDir * (speed * Time.fixedDeltaTime), rb.position.y));
+
+            if (roamPosition == 0)
+                enemy.GetAnimator().SetBool("isRunning", false);
+            else
+            {
+                if (roamPosition > 0 && goingRight)
+                    Flip();
+                else if (roamPosition < 0 && !goingRight)
+                    Flip();
+
+                enemy.GetAnimator().SetBool("isRunning", true);
+            }
+
+            enemyPathfinding.MoveTo(roamPosition);
+            yield return new WaitForSeconds(2f);
+        }
     }
 
-    public void MoveTo(float targetPos)
-    { moveDir = targetPos; }
+    void Flip()
+    {
+        goingRight = !goingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
+
+    private float GetRoamingPosition()
+    { return Random.Range(-1f, 1f); }
 }

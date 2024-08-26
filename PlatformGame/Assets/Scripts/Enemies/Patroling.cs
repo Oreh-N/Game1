@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Patroling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private EnemyController enemy;
+    public Transform[] patrolPoints;
+    public int patrolDestination;
+    public float moveSpeed;
 
-    // Update is called once per frame
+
+    private void Start()
+    { enemy = GetComponent<EnemyController>(); }
+
     void Update()
     {
-        
+        enemy.GetAnimator().SetBool("isRunning", true);
+        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f)
+        {
+            patrolDestination = (patrolDestination + 1) % patrolPoints.Length;
+
+            if (patrolDestination % 2 == 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            else
+                transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }
