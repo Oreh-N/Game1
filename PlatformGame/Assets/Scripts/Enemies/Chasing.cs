@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class Chasing : MonoBehaviour
 {
-    private EnemyPathfinding enemyPathFinding;
+    private EnemyPathfinding enemyMovement;
+    private EnemyController.State prevState;
     public Transform playerTransform;
     private EnemyController enemy;
-    private EnemyController.State prevState;
-    public float chaseDist {  get; private set; }
+    public float chaseDist { get; private set; }
     
 
-
-    private void Start()
+    void Start()
     {
-        enemyPathFinding = GetComponent<EnemyPathfinding>();
+        enemyMovement = GetComponent<EnemyPathfinding>();
         enemy = GetComponent<EnemyController>();
         prevState = enemy.state;
         chaseDist = 5f;
@@ -27,7 +26,7 @@ public class Chasing : MonoBehaviour
         { 
             Chase();
             if (Vector2.Distance(transform.position, playerTransform.position) >= chaseDist)
-            { enemy.state = prevState; }
+            { enemy.state = prevState; }    // continue patroling
         }
         else if (Vector2.Distance(transform.position, playerTransform.position) < chaseDist)
         {
@@ -39,9 +38,9 @@ public class Chasing : MonoBehaviour
     private void Chase()
     {
         if (transform.position.x > playerTransform.position.x)  // player on the left
-        { enemyPathFinding.MoveTo(Vector3.left.x); }
+        { enemyMovement.MoveTo(Vector3.left.x); }
 
         if (transform.position.x < playerTransform.position.x)
-        { enemyPathFinding.MoveTo(Vector3.right.x); }
+        { enemyMovement.MoveTo(Vector3.right.x); }
     }
 }

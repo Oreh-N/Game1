@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyPathfinding : MonoBehaviour
 {
-    [SerializeField] public float speed;
+    [SerializeField] public float speed { get; private set; }
     private KnockBack knockBack;
     private Rigidbody2D rb;
     public float moveDir {  get; private set; }
@@ -22,10 +22,10 @@ public class EnemyPathfinding : MonoBehaviour
     private void Update()
     {
         if (knockBack.gettingKnockedBack) { return; }
-
+        // goes in the current direction
         rb.MovePosition(new Vector2(rb.position.x + moveDir * (speed * Time.fixedDeltaTime), rb.position.y));
     }
 
     public void MoveTo(float targetPos)
-    { moveDir = targetPos; }
+    { moveDir = targetPos; }    // set current direction
 }

@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  health: 100
   player: {fileID: 1725723374}
 --- !u!61 &79938885
 BoxCollider2D:
@@ -297,14 +296,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8188a1b8fc5e2b942953870f96dc4347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCoolDown: 1
-  range: 1.06
-  colliderDist: 1.2
-  damage: 15
   enemyCollider: {fileID: 79938885}
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  attackCoolDown: 1
+  colliderDist: 1.2
+  range: 1.06
+  damage: 15
   player: {fileID: 1725723374}
 --- !u!114 &79938892
 MonoBehaviour:
@@ -331,7 +330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047ba0de4ada0e245b18b54e74cf4d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &79938895
 MonoBehaviour:
   m_ObjectHideFlags: 0

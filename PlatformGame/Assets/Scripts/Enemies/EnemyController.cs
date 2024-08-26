@@ -12,14 +12,14 @@ public class EnemyController : MonoBehaviour
 
     public State state;
 
-    [SerializeField] private int health = 100;
+    public bool goingRight { get; private set; }
     public PlayerController player;
     private KnockBack knockBack;
-    [SerializeField] public bool goingRight {  get; private set; }
+    private int health = 100;
     private Animator anim;
     
     
-    private void Start()
+    void Start()
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
         goingRight = true;
     }
 
-    private void Update()
+    void Update()
     {
         if (health <= 0)
         {
@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour
     public void Flip()
     {
         goingRight = !goingRight;
-        Vector3 scaler = transform.localScale;
+        Vector3 scaler = transform.localScale; // works correctly for enemies of any scale
         scaler.x *= -1;
         transform.localScale = scaler;
     }
