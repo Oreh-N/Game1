@@ -333,7 +333,7 @@ MonoBehaviour:
   moveDir: 0
   playerTransform: {fileID: 1725723380}
   isChasing: 0
-  chaseDist: 3
+  chaseDist: 0
 --- !u!1 &125088712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4365628713302388598, guid: 026031b358dc65e4aaad153892b810ab, type: 3}

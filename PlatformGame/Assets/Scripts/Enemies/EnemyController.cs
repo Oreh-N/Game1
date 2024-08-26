@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
-        state = State.Patroling;
+        state = State.Roaming;
     }
 
     private void Update()

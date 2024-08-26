@@ -15,6 +15,8 @@ public class Patroling : MonoBehaviour
 
     void Update()
     {
+        if (enemy.GetState() != EnemyController.State.Patroling) return;
+
         enemy.GetAnimator().SetBool("isRunning", true);
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
 

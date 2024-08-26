@@ -25,19 +25,7 @@ public class EnemyPathfinding : MonoBehaviour
     {
         if (isChasing)
         {
-            if (transform.position.x > playerTransform.position.x)  // player on the left
-            {                               // enemy scale
-                if (moveDir > 0)
-                    transform.localScale = new Vector3(-1, 1, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime; }
-
-            if (transform.position.x < playerTransform.position.x)
-            {
-                if (moveDir < 0)
-                    transform.localScale = new Vector3(1, 1, 1);
-                transform.position += Vector3.right * speed * Time.deltaTime;
-            }
-            isChasing = false;
+            Chase();
         }
         else
         {
@@ -48,6 +36,24 @@ public class EnemyPathfinding : MonoBehaviour
 
             rb.MovePosition(new Vector2(rb.position.x + moveDir * (speed * Time.fixedDeltaTime), rb.position.y));
         }
+    }
+
+    private void Chase()
+    {
+        if (transform.position.x > playerTransform.position.x)  // player on the left
+        {                               // enemy scale
+            if (moveDir > 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+
+        if (transform.position.x < playerTransform.position.x)
+        {
+            if (moveDir < 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+        isChasing = false;
     }
 
     public void MoveTo(float targetPos)
