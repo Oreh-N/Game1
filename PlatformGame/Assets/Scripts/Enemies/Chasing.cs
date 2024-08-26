@@ -46,7 +46,7 @@ public class Chasing : MonoBehaviour
                 goingRight = false;
                 enemy.Flip(ref goingRight);
             }
-            enemyPathFinding.moveDir = Vector3.left.x;
+            enemyPathFinding.MoveTo(Vector3.left.x);
         }
 
         if (transform.position.x < playerTransform.position.x)
@@ -56,7 +56,7 @@ public class Chasing : MonoBehaviour
                 goingRight = true;
                 enemy.Flip(ref goingRight);
             }
-            enemyPathFinding.moveDir = Vector3.right.x;
+            enemyPathFinding.MoveTo(Vector3.right.x);
         }
     }
 }

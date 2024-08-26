@@ -9,7 +9,7 @@ public class EnemyPathfinding : MonoBehaviour
     [SerializeField] public float speed;
     private KnockBack knockBack;
     private Rigidbody2D rb;
-    public float moveDir;
+    public float moveDir {  get; private set; }
     
 
     private void Awake()
