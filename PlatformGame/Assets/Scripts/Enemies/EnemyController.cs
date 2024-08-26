@@ -12,19 +12,23 @@ public class EnemyController : MonoBehaviour
 
     public State state;
 
+    [SerializeField] FloatingHealthBar healthBar;
     public bool goingRight { get; private set; }
+    public int maxHealth = 100, health = 100;
     public PlayerController player;
     private KnockBack knockBack;
-    private int health = 100;
     private Animator anim;
     
     
     void Start()
     {
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
         state = State.Roaming;
         goingRight = true;
+
+        healthBar.InitializeHealthBar(maxHealth, health);
     }
 
     void Update()
@@ -50,6 +54,7 @@ public class EnemyController : MonoBehaviour
         anim.SetTrigger("getHurt");
         health -= damage;
         knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
+        healthBar.UpdateHealthBar(health);
     }
 
     public void Flip()
