@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 public class EnemyController : MonoBehaviour
 {
     public enum State
-    { Roaming, Dying, Patroling }
+    { Roaming, Dying, Patroling, Chasing }
 
-    private State state;
+    public State state;
 
     [SerializeField] private int health = 100;
     public PlayerController player;
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
-        state = State.Roaming;
+        state = State.Patroling;
     }
 
     private void Update()
@@ -50,7 +50,13 @@ public class EnemyController : MonoBehaviour
         knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
     }
 
-    public State GetState() { return state; }
+    public void Flip(ref bool goingRight)
+    {
+        goingRight = !goingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
+    }
 
     public Animator GetAnimator() { return anim; } 
 }

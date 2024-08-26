@@ -7,7 +7,6 @@ public class Wandering : MonoBehaviour
     private EnemyPathfinding enemyPathfinding;
     private EnemyController enemy;
     private bool goingRight;
-    public float moveDir;
     
 
     private void Start()
@@ -21,7 +20,7 @@ public class Wandering : MonoBehaviour
 
     private IEnumerator RoamingRoutine()
     {
-        while (enemy.GetState() == EnemyController.State.Roaming)
+        while (enemy.state == EnemyController.State.Roaming)
         {
             float roamPosition = GetRoamingPosition();
 
@@ -31,9 +30,9 @@ public class Wandering : MonoBehaviour
             else
             {
                 if (roamPosition > 0 && goingRight)
-                    Flip();
+                    enemy.Flip(ref goingRight);
                 else if (roamPosition < 0 && !goingRight)
-                    Flip();
+                    enemy.Flip(ref goingRight);
 
                 enemy.GetAnimator().SetBool("isRunning", true);
             }
@@ -41,14 +40,6 @@ public class Wandering : MonoBehaviour
             enemyPathfinding.MoveTo(roamPosition);
             yield return new WaitForSeconds(2f);
         }
-    }
-
-    void Flip()
-    {
-        goingRight = !goingRight;
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
     }
 
     private float GetRoamingPosition()

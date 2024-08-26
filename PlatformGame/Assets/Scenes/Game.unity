@@ -138,8 +138,9 @@ GameObject:
   - component: {fileID: 79938884}
   - component: {fileID: 79938888}
   - component: {fileID: 79938889}
-  - component: {fileID: 79938890}
-  - component: {fileID: 79938891}
+  - component: {fileID: 79938892}
+  - component: {fileID: 79938893}
+  - component: {fileID: 79938894}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0a800efaa19c647bf3091ee8fcc7a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   health: 100
   player: {fileID: 1725723374}
 --- !u!61 &79938885
@@ -304,7 +306,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   player: {fileID: 1725723374}
---- !u!114 &79938890
+--- !u!114 &79938892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,11 +315,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 79938880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b5512572536644e8b1c2d7a38532e1, type: 3}
+  m_Script: {fileID: 11500000, guid: fbb0f4c6ab62ab442ae6457f3c243081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDir: 0
---- !u!114 &79938891
+  playerTransform: {fileID: 1725723380}
+--- !u!114 &79938893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79938880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f4f60f9a4916e4ca40f6fcb0ffda53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints:
+  - {fileID: 2026495610}
+  - {fileID: 134258038}
+  patrolDestination: 0
+  moveSpeed: 3
+--- !u!114 &79938894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -329,11 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047ba0de4ada0e245b18b54e74cf4d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   moveDir: 0
-  playerTransform: {fileID: 1725723380}
-  isChasing: 0
-  chaseDist: 0
 --- !u!1 &125088712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4365628713302388598, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
@@ -864,7 +880,7 @@ Transform:
   m_GameObject: {fileID: 276273581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.4474, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.39734, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1390,7 +1406,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09122372, y: 0.12832832, z: 110}
+  m_LocalPosition: {x: -0.09747696, y: 0.12831926, z: 110}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2728,7 +2744,7 @@ Transform:
   m_GameObject: {fileID: 1123327408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.22675, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.1955, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4164,7 +4180,7 @@ Transform:
   m_GameObject: {fileID: 1585704667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.07965, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.0609, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
