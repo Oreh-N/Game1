@@ -9,7 +9,6 @@ public class Chasing : MonoBehaviour
     public Transform playerTransform;
     private EnemyController enemy;
     private EnemyController.State prevState;
-    private bool goingRight;
     public float chaseDist {  get; private set; }
     
 
@@ -40,23 +39,9 @@ public class Chasing : MonoBehaviour
     private void Chase()
     {
         if (transform.position.x > playerTransform.position.x)  // player on the left
-        {                               // enemy scale
-            if (enemyPathFinding.moveDir > 0)
-            {
-                goingRight = false;
-                enemy.Flip(ref goingRight);
-            }
-            enemyPathFinding.MoveTo(Vector3.left.x);
-        }
+        { enemyPathFinding.MoveTo(Vector3.left.x); }
 
         if (transform.position.x < playerTransform.position.x)
-        {
-            if (enemyPathFinding.moveDir < 0)
-            {
-                goingRight = true;
-                enemy.Flip(ref goingRight);
-            }
-            enemyPathFinding.MoveTo(Vector3.right.x);
-        }
+        { enemyPathFinding.MoveTo(Vector3.right.x); }
     }
 }

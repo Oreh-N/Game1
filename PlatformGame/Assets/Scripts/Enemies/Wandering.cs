@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Wandering : MonoBehaviour
 {
-    private EnemyPathfinding enemyPathfinding;
+    private EnemyPathfinding enemyMovement;
     private Coroutine roamingCoroutine;
     private EnemyController enemy;
-    private bool goingRight;
-    
     
 
     private void Start()
     { 
-        enemyPathfinding = GetComponent<EnemyPathfinding>();
+        enemyMovement = GetComponent<EnemyPathfinding>();
         enemy = GetComponent<EnemyController>();
         StartRoaming();
     }
@@ -22,6 +20,8 @@ public class Wandering : MonoBehaviour
     {
         if (enemy.state == EnemyController.State.Roaming && roamingCoroutine == null)
         { StartRoaming(); }
+        if ((enemy.goingRight && enemyMovement.moveDir < 0) || (!enemy.goingRight && enemyMovement.moveDir > 0))
+        { enemy.Flip(); }
     }
 
     private void StartRoaming()
@@ -37,17 +37,12 @@ public class Wandering : MonoBehaviour
             if (roamPosition == 0)
             {
                 enemy.GetAnimator().SetBool("isRunning", false);
-                enemyPathfinding.MoveTo(0);
+                enemyMovement.MoveTo(0);
             }
             else
             {
-                if (roamPosition > 0 && !goingRight)
-                    enemy.Flip(ref goingRight);
-                else if (roamPosition < 0 && goingRight)
-                    enemy.Flip(ref goingRight);
-
                 enemy.GetAnimator().SetBool("isRunning", true);
-                enemyPathfinding.MoveTo(roamPosition);
+                enemyMovement.MoveTo(roamPosition);
             }
             yield return new WaitForSeconds(2f);
         }
@@ -59,12 +54,7 @@ public class Wandering : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("wall"))
-        {
-            goingRight = !goingRight;
-            enemy.Flip(ref goingRight);
-
-            enemyPathfinding.MoveTo(-enemyPathfinding.moveDir);
-        }
+        if (collision.gameObject.CompareTag("Wall"))
+        { enemyMovement.MoveTo(-enemyMovement.moveDir); }
     }
 }

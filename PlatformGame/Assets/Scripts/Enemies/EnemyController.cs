@@ -15,14 +15,16 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int health = 100;
     public PlayerController player;
     private KnockBack knockBack;
+    [SerializeField] public bool goingRight {  get; private set; }
     private Animator anim;
     
     
-    private void Awake()
+    private void Start()
     {
         knockBack = GetComponent<KnockBack>();
         anim = GetComponent<Animator>();
         state = State.Roaming;
+        goingRight = true;
     }
 
     private void Update()
@@ -50,7 +52,7 @@ public class EnemyController : MonoBehaviour
         knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
     }
 
-    public void Flip(ref bool goingRight)
+    public void Flip()
     {
         goingRight = !goingRight;
         Vector3 scaler = transform.localScale;
