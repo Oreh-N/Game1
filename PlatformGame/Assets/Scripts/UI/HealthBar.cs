@@ -10,18 +10,10 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        health.minValue = 0;
-        health.maxValue = player.health;
-
-        health.value = player.health;
+        health.maxValue = player.health.maxHealth;
+        health.value = player.health.currHealth;
     }
 
     void Update()
-    { health.value = player.health; }
-
-    public void Damage(int damage)
-    { health.value -= damage; }
-
-    public void Heal(int heal)
-    { health.value += heal; }
+    { health.value = player.health.currHealth; }
 }

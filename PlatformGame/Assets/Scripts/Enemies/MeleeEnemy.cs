@@ -54,6 +54,6 @@ public class MeleeEnemy : MonoBehaviour
     private void HitPlayer()    // used as animation event
     {
         if (PlayerInSight()) // if player still in hitbox
-        { player.TakeDamage(damage); }
+        { player.health.TakeDamage(damage); }
     }
 }

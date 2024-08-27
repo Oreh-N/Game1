@@ -11,18 +11,16 @@ public class PlayerController  : MonoBehaviour
     public GameObject interactIcon;
 
     public float jumpForce = 11f;
-    public int maxHealth = 100;
-    public int health = 100;
     public int defence = 5;
     public float speed = 5;
     public int damage = 10;
     public int level = 1;
 
+    public PlayerHealth health;
     public static PlayerController Instance;
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
     private BoxCollider2D boxCollider2d;
-    public SpriteRenderer sword;
     private bool goingRight;
     private Rigidbody2D rb;
     private Animator anim;
@@ -37,7 +35,7 @@ public class PlayerController  : MonoBehaviour
         PlayerData data = SavingSystem.LoadPlayerState();
 
         level = data.level;
-        health = data.health;
+        health.currHealth = data.health;
         speed = data.speed;
         damage = data.power;
         defence = data.defence;
@@ -55,6 +53,7 @@ public class PlayerController  : MonoBehaviour
     void Start()
     {
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
+        health = transform.GetComponent<PlayerHealth>();
         rb = transform.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -146,9 +145,6 @@ public class PlayerController  : MonoBehaviour
         lvlText.text = level.ToString();
     }
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        anim.SetTrigger("takeDamage");
-    }
+    public Animator GetAnimator()
+    { return anim; }
 }

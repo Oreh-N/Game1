@@ -16,7 +16,7 @@ public class PlayerData
     {
         level = player.level;
         power = player.damage;
-        health = player.health;
+        health = player.health.currHealth;
         defence = player.defence;
         speed = player.speed;
 

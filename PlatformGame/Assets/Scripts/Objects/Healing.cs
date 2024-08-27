@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 
-public class Healing : Interactable
+public class Healing : MonoBehaviour, IUsable
 {
-    public PlayerController player;
-    private int heal;
+    public PlayerHealth playerHealth;
+    public int heal;
 
 
-    void Start()
-    { player = GetComponent<PlayerController>(); }
-
-
-    public override void Interact()
-    { player.health += heal; }
+    public void Use()
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.Heal(heal);
+            Debug.Log($"I am healing: +{heal}");
+        }
+        else
+        {
+            Debug.LogError($"Player: {playerHealth} or Player's health: {playerHealth} is not assigned!") ;
+        }
+    }
 }

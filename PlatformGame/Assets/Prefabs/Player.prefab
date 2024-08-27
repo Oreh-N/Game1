@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7664871415869863156}
   - component: {fileID: 1925259688454572961}
+  - component: {fileID: 3015920408431321658}
   m_Layer: 10
   m_Name: Sword_sketch
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 953097303251421275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7254203, w: 0.6883062}
-  m_LocalPosition: {x: -0.007, y: 0.077, z: 120}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalPosition: {x: -0.0199, y: 0.078, z: 120}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6968293542817229087}
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 839323333
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b307be95292b7ef4abd13a93ffd5cc41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8c73039bfdf9c94fb9e58f89b737b69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3015920408431321658
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953097303251421275}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfc9f65a0079a044f9f94fd5f5e134da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2006318787482002026
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +235,7 @@ GameObject:
   - component: {fileID: 7437208307274883642}
   - component: {fileID: 473883090360724390}
   m_Layer: 0
-  m_Name: LegBig (1)
+  m_Name: LegBigR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 4167299521874630541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.061735578, y: 0.027799709, z: 0}
+  m_LocalPosition: {x: 0.057, y: 0.026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +434,7 @@ GameObject:
   - component: {fileID: 7570803751648160591}
   - component: {fileID: 8351374921076639220}
   m_Layer: 0
-  m_Name: LegBig
+  m_Name: LegBigL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,6 +773,7 @@ GameObject:
   - component: {fileID: 731857324789442645}
   - component: {fileID: 6223667081590846422}
   - component: {fileID: 5521751119778704849}
+  - component: {fileID: 2859704609972765570}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -767,7 +790,7 @@ Transform:
   m_GameObject: {fileID: 7972236080090274641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.11, y: -3.48, z: 0}
+  m_LocalPosition: {x: -7.446, y: -3.79, z: 120}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -786,7 +809,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
@@ -911,13 +934,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwAttack: 0.3
-  attackPos: {fileID: 4047450569503129175}
-  attackRange: 0.7
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 2048
+  attackPos: {fileID: 4047450569503129175}
+  attackRange: 1
   damage: 20
-  attackAnim: {fileID: 0}
 --- !u!114 &731857324789442645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,16 +954,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 0}
   jumpForce: 12
-  maxHealth: 100
-  health: 100
   defence: 5
-  speed: 5
+  speed: 8
   damage: 10
   level: 1
+  health: {fileID: 2859704609972765570}
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  sword: {fileID: 1925259688454572961}
   lvlText: {fileID: 0}
 --- !u!95 &6223667081590846422
 Animator:
@@ -984,6 +1004,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   inventory: {fileID: 0}
+--- !u!114 &2859704609972765570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972236080090274641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923046d76727fb04cafeb5d1ea987f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 731857324789442645}
+  maxHealth: 100
+  currHealth: 0
 --- !u!1 &8224711698596161153
 GameObject:
   m_ObjectHideFlags: 0

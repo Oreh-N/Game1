@@ -30,4 +30,16 @@ public class Cell : MonoBehaviour
             }
         }
     }
+
+    public void UseItem()
+    {
+        foreach (Transform child in transform)
+        {
+            if (inventory.isFull[id])
+            {
+                child.GetComponent<Healing>().Use();
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+    }
 }
