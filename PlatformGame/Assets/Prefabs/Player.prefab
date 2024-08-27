@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 731857324789442645}
   - component: {fileID: 6223667081590846422}
   - component: {fileID: 5521751119778704849}
-  - component: {fileID: 2859704609972765570}
+  - component: {fileID: 4947835779218189217}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -953,12 +953,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 0}
+  health: {fileID: 4947835779218189217}
   jumpForce: 12
   defence: 5
   speed: 8
   damage: 10
   level: 1
-  health: {fileID: 2859704609972765570}
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 2304
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   inventory: {fileID: 0}
---- !u!114 &2859704609972765570
+--- !u!114 &4947835779218189217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

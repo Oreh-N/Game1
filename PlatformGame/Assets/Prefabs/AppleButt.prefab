@@ -148,5 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde30a824cf3c774c9e82f19e1fb01d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 2859704609972765570, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
+  player: {fileID: 731857324789442645, guid: d90e5478652fee24c8e2585a018fdc61, type: 3}
   heal: 10

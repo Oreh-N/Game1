@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,16 +11,17 @@ public class PlayerController  : MonoBehaviour
 {
     public GameObject interactIcon;
 
+    public PlayerHealth health;
     public float jumpForce = 11f;
     public int defence = 5;
     public float speed = 5;
     public int damage = 10;
     public int level = 1;
 
-    public PlayerHealth health;
-    public static PlayerController Instance;
+
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
+    public static PlayerController Instance;
     private BoxCollider2D boxCollider2d;
     private bool goingRight;
     private Rigidbody2D rb;
@@ -53,9 +55,9 @@ public class PlayerController  : MonoBehaviour
     void Start()
     {
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
-        health = transform.GetComponent<PlayerHealth>();
         rb = transform.GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        health = transform.GetComponent<PlayerHealth>();
+        anim = transform.GetComponent<Animator>();
     }
 
 

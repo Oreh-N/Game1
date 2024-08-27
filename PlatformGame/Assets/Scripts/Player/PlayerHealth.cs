@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(int heal)
     {
         currHealth += heal;
-        //player.GetAnimator().SetTrigger("heal");
+        player.GetAnimator().SetTrigger("heal");
         if (currHealth > 100) { currHealth = 100; }
     }
 }
