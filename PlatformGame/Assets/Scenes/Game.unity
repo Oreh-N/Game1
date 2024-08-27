@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 276273581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.3133, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.2896, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1409,7 +1409,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0880785, y: 0.12833261, z: 110}
+  m_LocalPosition: {x: -0.09103298, y: 0.12832832, z: 110}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3022,7 +3022,7 @@ Transform:
   m_GameObject: {fileID: 1123327408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.14276, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.128, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4468,7 +4468,7 @@ Transform:
   m_GameObject: {fileID: 1585704667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.0293, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.02045, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7505,6 +7505,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_RepeatDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_CancelButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_SubmitButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_VerticalAxis
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_HorizontalAxis
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188998647541460857, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
+      propertyPath: m_InputActionsPerSecond
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4744773739307832938, guid: 787a3639eb9dba24bbb4aa79063e62e0, type: 3}
       propertyPath: m_Name
       value: EventSystem
