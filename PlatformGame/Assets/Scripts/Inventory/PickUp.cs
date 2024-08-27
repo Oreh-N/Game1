@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    private PlayerController player;
     private Inventory inventory;
     public GameObject cellButton;
     
     void Start()
-    { inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>(); }
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        inventory = player.GetComponent<Inventory>();
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +21,14 @@ public class PickUp : MonoBehaviour
         {
             for (int i = 0; i < inventory.cells.Length; i++)
             {
-                if (!inventory.isFull[i])
+                if (gameObject.CompareTag("Coin"))
+                { 
+                    player.UpdateCoinCount(50);
+                    Destroy(gameObject);
+                    break;
+                }
+
+                else if (!inventory.isFull[i])
                 {
                     inventory.isFull[i] = true;
                     Instantiate(cellButton, inventory.cells[i].transform);

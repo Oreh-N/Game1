@@ -19,6 +19,7 @@ public class PlayerController  : MonoBehaviour
     public int damage = 10;
     public int defence = 5;
     public int level = 1;
+    private int coins = 0;
 
     private bool goingRight;
     private bool isDashing;
@@ -32,6 +33,7 @@ public class PlayerController  : MonoBehaviour
     public GameObject interactIcon;
     private Rigidbody2D rb;
     private Animator anim;
+    public Text coinsCount;
     public Text lvlText;
 
 
@@ -156,6 +158,12 @@ public class PlayerController  : MonoBehaviour
     {
         level++;
         lvlText.text = level.ToString();
+    }
+
+    public void UpdateCoinCount(int value)
+    {
+        coins += value;
+        coinsCount.text = coins.ToString();
     }
 
     public Animator GetAnimator()

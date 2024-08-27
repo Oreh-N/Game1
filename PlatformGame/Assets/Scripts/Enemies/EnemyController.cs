@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
 
         anim.SetTrigger("getHurt");
         health -= damage;
-        knockBack.GetKnockedBack(PlayerController.Instance.transform, 1000f);
+        knockBack.GetKnockedBack(PlayerController.Instance.transform, 2500f);
         healthBar.UpdateHealthBar(health);
     }
 
