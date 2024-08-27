@@ -9,26 +9,32 @@ using UnityEngine.UI;
 
 public class PlayerController  : MonoBehaviour
 {
-    public GameObject interactIcon;
-
     public PlayerHealth health;
+
+    private float dashCooldown = 1f;
+    private float dashPower = 2f;
+    private float dashTime = 0.1f;
     public float jumpForce = 11f;
-    public int defence = 5;
-    public float speed = 5;
+    public float speed = 5f;
     public int damage = 10;
+    public int defence = 5;
     public int level = 1;
 
-
+    private bool goingRight;
+    private bool isDashing;
+    private bool canDash = true;
+    
     [SerializeField] private LayerMask obstaclesLayerMask;
     private Vector2 boxSize = new Vector2 (1.5f, 1f);
+    [SerializeField] private TrailRenderer trailRend;
     public static PlayerController Instance;
     private BoxCollider2D boxCollider2d;
-    private bool goingRight;
+    public GameObject interactIcon;
     private Rigidbody2D rb;
     private Animator anim;
     public Text lvlText;
-    
-    
+
+
     public void SavePlayerState()
     { SavingSystem.SavePlayerState(this); }
 
@@ -63,6 +69,8 @@ public class PlayerController  : MonoBehaviour
 
     void Update()
     {
+        if (isDashing) return;
+
         if (IsGrounded())
         { anim.SetBool("isJumping", false); }
         else
@@ -81,6 +89,8 @@ public class PlayerController  : MonoBehaviour
                 Flip();
             else if (!goingRight && Input.GetAxis("Horizontal") < 0)
                 Flip();
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+                StartCoroutine(Dash());
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -149,4 +159,20 @@ public class PlayerController  : MonoBehaviour
 
     public Animator GetAnimator()
     { return anim; }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashPower, 0f);
+        trailRend.emitting = true;
+        yield return new WaitForSeconds(dashTime);
+        trailRend.emitting = false;
+        rb.gravityScale = originGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
+    }
 }
