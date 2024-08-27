@@ -35,7 +35,7 @@ public class Cell : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (inventory.isFull[id])
+            if (inventory.isFull[id] && child.GetComponent<Healing>() != null)
             {
                 child.GetComponent<Healing>().Use();
                 GameObject.Destroy(child.gameObject);

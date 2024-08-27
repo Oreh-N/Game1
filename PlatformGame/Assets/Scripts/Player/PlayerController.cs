@@ -64,6 +64,7 @@ public class PlayerController  : MonoBehaviour
         rb = transform.GetComponent<Rigidbody2D>();
         health = transform.GetComponent<PlayerHealth>();
         anim = transform.GetComponent<Animator>();
+        SavePlayerState();
     }
 
 
