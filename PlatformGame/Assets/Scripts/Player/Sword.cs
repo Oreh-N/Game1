@@ -4,40 +4,42 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private float timeBtwAttack;
-    public float startTimeBtwAttack = 0.005f;
+    public float pauseBtwAttack = 0.2f;
 
-
-    private Animator anim;
     public LayerMask whatIsEnemy;
     public Transform attackPos;
     public float attackRange;
     public int damage = 20;
+    private Animator anim;
 
-
+    bool isAttacking = false;
+    
 
     private void Start()
     { anim = GetComponent<Animator>(); }
 
     private void Update()
     {
-        if (timeBtwAttack <= 0)
-        {
-            if (Input.GetKey(KeyCode.Alpha0))
-            {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
-                anim.SetTrigger("hit");
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                    enemiesToDamage[i].GetComponent<EnemyController>().GetHurt(damage);
-            }
-            timeBtwAttack = startTimeBtwAttack;
-        }
-        else
-        {
-            timeBtwAttack -= Time.deltaTime;
-        }
+        if (isAttacking) return;
+
+        if (Input.GetKeyDown(KeyCode.Return))
+            StartCoroutine(Attack());
     }
 
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        { enemiesToDamage[i].GetComponent<EnemyController>().GetHurt(damage); }
+
+        anim.SetTrigger("hit");
+        
+        yield return new WaitForSeconds(pauseBtwAttack);
+        isAttacking = false;
+    }
 
     private void OnDrawGizmos()
     {

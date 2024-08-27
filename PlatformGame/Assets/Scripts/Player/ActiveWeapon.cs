@@ -9,6 +9,4 @@ public class ActiveWeapon : MonoBehaviour
 
     public ActiveWeapon(int damage)
     { this.damage = damage; }
-
-
 }
