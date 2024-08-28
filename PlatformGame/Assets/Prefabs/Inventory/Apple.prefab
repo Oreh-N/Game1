@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3023497855088881804}
   - component: {fileID: 1814998282301156919}
   - component: {fileID: 3295367990938049708}
-  - component: {fileID: -5035576856515334033}
   - component: {fileID: -6270278533038931670}
+  - component: {fileID: -5035576856515334033}
   - component: {fileID: -6104732521065486336}
   m_Layer: 9
   m_Name: Apple
@@ -115,19 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5035576856515334033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859008359467182753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7169b7c0281264d48805a7eadd40d5bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellButton: {fileID: 2567966272832362619, guid: d9c1fd18d05137d429b32b81c29b1722, type: 3}
 --- !u!61 &-6270278533038931670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +160,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &-5035576856515334033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859008359467182753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169b7c0281264d48805a7eadd40d5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellButton: {fileID: 2567966272832362619, guid: d9c1fd18d05137d429b32b81c29b1722, type: 3}
+  id: 0
 --- !u!114 &-6104732521065486336
 MonoBehaviour:
   m_ObjectHideFlags: 0

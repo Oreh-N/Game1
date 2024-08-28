@@ -7,6 +7,7 @@ public class PickUp : MonoBehaviour
     private PlayerController player;
     private Inventory inventory;
     public GameObject cellButton;
+    public int id;
     
     void Start()
     {

@@ -11,7 +11,7 @@ public class QuestCloud : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             foreach (Animator anim in clouds)
-            { anim.SetBool("popUp", true); }
+            { anim.SetTrigger("popUp"); }
         }
     }
 
@@ -20,7 +20,7 @@ public class QuestCloud : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             foreach (Animator anim in clouds)
-            { anim.SetBool("popUp", false); }
+            { anim.SetTrigger("popUp"); }
         }
     }
 }

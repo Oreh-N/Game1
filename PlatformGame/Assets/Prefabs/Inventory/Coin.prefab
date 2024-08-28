@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3593287123818066381}
   - component: {fileID: 8292625919852983361}
   - component: {fileID: 6833938631592698804}
-  - component: {fileID: 1274666155081958102}
   - component: {fileID: 3628140299951079645}
+  - component: {fileID: 1274666155081958102}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -150,6 +150,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3628140299951079645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940647988194680377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169b7c0281264d48805a7eadd40d5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellButton: {fileID: 0}
+  id: 2
 --- !u!114 &1274666155081958102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,16 +178,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 1940647988194680377}
   dropChance: 80
---- !u!114 &3628140299951079645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940647988194680377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7169b7c0281264d48805a7eadd40d5bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellButton: {fileID: 0}
