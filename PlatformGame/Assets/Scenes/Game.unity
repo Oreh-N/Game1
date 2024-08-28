@@ -439,7 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatIsObstacle:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   items:
   - {fileID: 1274666155081958102, guid: fc927c3e1db94c54f82405eb0344e834, type: 3}
   - {fileID: 1005650222375022082, guid: a12acb40d2cdac9469d433280fcf5e2a, type: 3}
@@ -907,7 +907,7 @@ Transform:
   m_GameObject: {fileID: 276273581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.319, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.34204, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1603,7 +1603,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.094070435, y: 0.12832403, z: 110}
+  m_LocalPosition: {x: -0.09118652, y: 0.12832832, z: 110}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2952,8 +2952,8 @@ Transform:
   m_GameObject: {fileID: 884367057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.03, y: -2.75, z: -0.008880615}
-  m_LocalScale: {x: 2.133835, y: 3.7362869, z: 1}
+  m_LocalPosition: {x: 11.009, y: -2.9996, z: -0.008880615}
+  m_LocalScale: {x: 2.1758718, y: 4.2351737, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 631736318}
@@ -3486,7 +3486,7 @@ Transform:
   m_GameObject: {fileID: 1123327408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.14685, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.16125, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4992,7 +4992,7 @@ Transform:
   m_GameObject: {fileID: 1585704667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 727.0315, y: -29.48, z: -7274.4}
+  m_LocalPosition: {x: 727.04016, y: -29.48, z: -7274.4}
   m_LocalScale: {x: 71.72039, y: 67.340164, z: 51.96}
   m_ConstrainProportionsScale: 0
   m_Children: []

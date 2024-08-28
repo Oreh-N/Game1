@@ -31,20 +31,25 @@ public class LootSpawn : MonoBehaviour
             for (int i = 0; i < items.Length; i++)
             {
                 rnd = Random.Range(0, 100);
-
-                while (true)       // choose spawn place
+                
                 if (rnd <= items[i].dropChance)
                 {
-                    Vector2 spawnPos = new Vector2(transform.position.x + xDist + distBtwItems * i, transform.position.y + yDist);
-                    RaycastHit2D hit = Physics2D.Raycast(spawnPos, Vector2.down, rayLength, whatIsObstacle);
-
-                    if (hit.collider == null)
+                    while (true)       // choose spawn place
                     {
-                        Instantiate(items[i].item, spawnPos, Quaternion.identity);
-                        break;
+                        Vector2 spawnPos = new Vector2(transform.position.x + xDist + distBtwItems * i, transform.position.y + yDist);
+                        RaycastHit2D hit = Physics2D.Raycast(spawnPos, Vector2.down, rayLength, whatIsObstacle);
+
+                        if (hit.collider == null)
+                        {
+                            Instantiate(items[i].item, spawnPos, Quaternion.identity);
+                            break;
+                        }
+                        else
+                        { 
+                            xDist -= 0.1f;
+                            distBtwItems -= 0.1f;
+                        }
                     }
-                    else
-                    { xDist -= 0.1f; }
                 }
             }
         }
