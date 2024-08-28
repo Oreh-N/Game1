@@ -69,7 +69,6 @@ public class PlayerController  : MonoBehaviour
         SavePlayerState();
     }
 
-
     void Update()
     {
         if (isDashing) return;

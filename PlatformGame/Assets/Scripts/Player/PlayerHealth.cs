@@ -18,12 +18,17 @@ public class PlayerHealth : MonoBehaviour
     {
         currHealth -= damage;
         player.GetAnimator().SetTrigger("takeDamage");
+
+        if (currHealth < 0)
+        { currHealth = 0; }
     }
 
     public void Heal(int heal)
     {
         currHealth += heal;
         player.GetAnimator().SetTrigger("heal");
-        if (currHealth > 100) { currHealth = 100; }
+
+        if (currHealth > 100) 
+        { currHealth = 100; }
     }
 }

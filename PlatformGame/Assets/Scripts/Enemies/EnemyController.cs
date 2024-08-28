@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 public class EnemyController : MonoBehaviour
 {
     public enum State
@@ -17,13 +18,16 @@ public class EnemyController : MonoBehaviour
     public int maxHealth = 100, health = 100;
     public PlayerController player;
     private KnockBack knockBack;
+    private LootSpawn lootSpawn;
     private Animator anim;
-    
-    
+    bool isDead = false;
+
+
     void Start()
     {
         healthBar = GetComponentInChildren<FloatingHealthBar>();
         knockBack = GetComponent<KnockBack>();
+        lootSpawn = GetComponent<LootSpawn>();
         anim = GetComponent<Animator>();
         state = State.Roaming;
         goingRight = true;
@@ -34,10 +38,17 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (health <= 0)
-        {
-            state = State.Dying;
-            anim.SetBool("isDying", true);
-        }
+        { Die(); }
+    }
+
+    private void Die()
+    {
+        if (!isDead)
+            lootSpawn.SpawnLoot();
+
+        state = State.Dying;
+        anim.SetBool("isDying", true);
+        isDead = true;
     }
 
     public void DestroyEnemy()
