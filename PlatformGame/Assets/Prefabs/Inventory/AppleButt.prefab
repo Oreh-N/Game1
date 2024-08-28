@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6775745748315660281}
   - component: {fileID: 7697606861356163337}
   - component: {fileID: 282808364034614054}
-  - component: {fileID: 2039352262598828218}
   - component: {fileID: -6693940036995903515}
+  - component: {fileID: 2039352262598828218}
   - component: {fileID: -50874867942716771}
   m_Layer: 9
   m_Name: AppleButt
@@ -78,19 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2039352262598828218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567966272832362619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fa95f8f06e6ca48aa13c3b3b2ffe25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 4859008359467182753, guid: c592feb8aa8fbc04d8312c62a17f871b, type: 3}
 --- !u!61 &-6693940036995903515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,6 +123,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2039352262598828218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567966272832362619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fa95f8f06e6ca48aa13c3b3b2ffe25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xDist: 3
+  yDist: -2
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 256
+  item: {fileID: 4859008359467182753, guid: c592feb8aa8fbc04d8312c62a17f871b, type: 3}
 --- !u!114 &-50874867942716771
 MonoBehaviour:
   m_ObjectHideFlags: 0

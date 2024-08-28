@@ -857,7 +857,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008605048, y: -0.020242698}
+  m_Offset: {x: -0.0048752576, y: -0.020242663}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -868,7 +868,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11957137, y: 0.13384943}
+  m_Size: {x: 0.10809985, y: 0.13037696}
   m_EdgeRadius: 0
 --- !u!212 &5036145147028617220
 SpriteRenderer:
@@ -1077,6 +1077,7 @@ MonoBehaviour:
     m_Bits: 2304
   trailRend: {fileID: 1712875209889898050}
   interactIcon: {fileID: 0}
+  coinsCount: {fileID: 0}
   lvlText: {fileID: 0}
 --- !u!95 &6223667081590846422
 Animator:

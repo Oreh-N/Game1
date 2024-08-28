@@ -16,7 +16,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] FloatingHealthBar healthBar;
     public bool goingRight { get; private set; }
     public int maxHealth = 100, health = 100;
+    public float knockBackForce = 1500f;
     public PlayerController player;
+
     private KnockBack knockBack;
     private LootSpawn lootSpawn;
     private Animator anim;
@@ -64,7 +66,7 @@ public class EnemyController : MonoBehaviour
 
         anim.SetTrigger("getHurt");
         health -= damage;
-        knockBack.GetKnockedBack(PlayerController.Instance.transform, 2500f);
+        knockBack.GetKnockedBack(PlayerController.Instance.transform, knockBackForce);
         healthBar.UpdateHealthBar(health);
     }
 

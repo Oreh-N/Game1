@@ -25,7 +25,7 @@ public class Cell : MonoBehaviour
         {
             if (inventory.isFull[id])
             {
-                child.GetComponent<Spawn>().SpawnDroppedItem();
+                child.GetComponent<Spawn>().SpawnInventoryItem();
                 GameObject.Destroy(child.gameObject);
             }
         }

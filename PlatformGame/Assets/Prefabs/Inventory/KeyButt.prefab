@@ -88,4 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fa95f8f06e6ca48aa13c3b3b2ffe25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 256
   item: {fileID: 911192798678024230, guid: 9aa12616c67174a4d9044cc5249c3202, type: 3}

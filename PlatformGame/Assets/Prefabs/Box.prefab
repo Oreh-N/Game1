@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1856851661213117890}
   - component: {fileID: 5439467727891718287}
   - component: {fileID: 554472793547346584}
+  - component: {fileID: 4004446323266069002}
   m_Layer: 9
   m_Name: Box
   m_TagString: Untagged
@@ -145,3 +146,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 21300000, guid: a73ad7d8eb459fc41a0bfac1d393a196, type: 3}
   close: {fileID: 21300000, guid: 081c70e01ab704145979af3c591ba883, type: 3}
+--- !u!114 &4004446323266069002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175386379129237306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2520ff75231b648bff64068ea264a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 256
+  items:
+  - {fileID: -6104732521065486336, guid: c592feb8aa8fbc04d8312c62a17f871b, type: 3}
+  - {fileID: 1005650222375022082, guid: a12acb40d2cdac9469d433280fcf5e2a, type: 3}
+  - {fileID: 1274666155081958102, guid: fc927c3e1db94c54f82405eb0344e834, type: 3}
