@@ -51,8 +51,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Objects
+    uniqueID: 1668259881
+    locked: 0
   - name: Characters
     uniqueID: 839323333
+    locked: 0
+  - name: Decoration
+    uniqueID: 448434807
     locked: 0
   - name: GameMenu
     uniqueID: 1237132983

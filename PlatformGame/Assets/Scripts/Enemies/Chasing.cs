@@ -17,7 +17,7 @@ public class Chasing : MonoBehaviour
         enemyMovement = GetComponent<EnemyPathfinding>();
         enemy = GetComponent<EnemyController>();
         prevState = enemy.state;
-        chaseDist = 5f;
+        chaseDist = 4f;
     }
 
     void Update()
