@@ -18,24 +18,33 @@ public class Patroling : MonoBehaviour
 
     void Update()
     {
+        if ((enemy.goingRight && enemyMovement.moveDir < 0) || (!enemy.goingRight && enemyMovement.moveDir > 0))
+        { enemy.Flip(); } // the enemy is looking in the opposite direction from the direction of his movement
+
         if (enemy.state != EnemyController.State.Patroling) return;
 
         enemy.GetAnimator().SetBool("isRunning", true);
-        // current enemy position
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[patrolDestination].position, enemyMovement.speed * Time.deltaTime);
 
         // arrived at the current patrol point
         if (Vector2.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f)
-        {
             patrolDestination = (patrolDestination + 1) % patrolPoints.Length;  // selects the next patrol point
 
-            if (patrolDestination % 2 == 0)
-                transform.localScale = new Vector3(1, 1, 1);
-            else
-                transform.localScale = new Vector3(-1, 1, 1);
-        }
+        CheckDirection();
+    }
 
-        if ((enemy.goingRight && enemyMovement.moveDir < 0) || (!enemy.goingRight && enemyMovement.moveDir > 0))
-        { enemy.Flip(); } // the enemy is looking in the opposite direction from the direction of his movement
+    private void CheckDirection()
+    {
+        if (transform.position.x - patrolPoints[patrolDestination].position.x > 0)  // go left
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            enemy.goingRight = false;
+            enemyMovement.MoveTo(-1);
+        }
+        else if (transform.position.x - patrolPoints[patrolDestination].position.x < 0)  // go right
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            enemy.goingRight = true;
+            enemyMovement.MoveTo(1);
+        }
     }
 }

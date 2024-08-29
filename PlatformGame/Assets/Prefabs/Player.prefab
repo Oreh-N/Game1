@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 4947835779218189217}
-  jumpForce: 12
+  jumpForce: 19
   speed: 8
   damage: 10
   defence: 5

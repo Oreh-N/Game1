@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public State state;
 
     [SerializeField] FloatingHealthBar healthBar;
-    public bool goingRight { get; private set; }
+    public bool goingRight;
     public int maxHealth = 100, health = 100;
     public float knockBackForce = 1500f;
     public PlayerController player;
@@ -31,7 +31,6 @@ public class EnemyController : MonoBehaviour
         knockBack = GetComponent<KnockBack>();
         lootSpawn = GetComponent<LootSpawn>();
         anim = GetComponent<Animator>();
-        state = State.Roaming;
         goingRight = true;
 
         healthBar.InitializeHealthBar(maxHealth, health);
