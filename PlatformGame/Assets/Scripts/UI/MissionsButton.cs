@@ -8,7 +8,7 @@ public class MissionsButton : MonoBehaviour
     private bool missionsOpen;
 
     private void Start()
-    { missionsOpen = true; }
+    { missionsOpen = false; }
 
     public void OnClick()
     {
