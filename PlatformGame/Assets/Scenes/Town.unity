@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: state
       value: 2
@@ -1521,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: state
       value: 0
@@ -1658,11 +1666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.087387085
+      value: -0.08676529
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14935112
+      value: 0.14935207
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2354,6 +2362,10 @@ PrefabInstance:
     - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: m_Name
       value: Knight (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: state
@@ -5820,7 +5832,7 @@ Transform:
   m_GameObject: {fileID: 1550354908}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 730.1184, y: -30.98, z: 145}
+  m_LocalPosition: {x: 730.1203, y: -30.98, z: 145}
   m_LocalScale: {x: 207.32928, y: 97.84801, z: 71.50001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6366,6 +6378,10 @@ PrefabInstance:
     - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: state

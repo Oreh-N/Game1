@@ -1382,6 +1382,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: state
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: player
       value: 
@@ -3106,6 +3114,10 @@ PrefabInstance:
     - target: {fileID: 476457823280417894, guid: 49338d0168ccfdb4f884d20dd058c5a9, type: 3}
       propertyPath: m_Name
       value: WolfEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 476457823280417894, guid: 49338d0168ccfdb4f884d20dd058c5a9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 781113308501672903, guid: 49338d0168ccfdb4f884d20dd058c5a9, type: 3}
       propertyPath: state
@@ -7668,6 +7680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WolfEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 476457823280417894, guid: 49338d0168ccfdb4f884d20dd058c5a9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 781113308501672903, guid: 49338d0168ccfdb4f884d20dd058c5a9, type: 3}
       propertyPath: player
       value: 
@@ -7747,11 +7763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0941
+      value: -0.0851326
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14933944
+      value: 0.14935565
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8285,6 +8301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 365316229470515002, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: state
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2707914167749145411, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: player
       value: 
@@ -8461,7 +8485,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 933511189714738319, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 727.305
+      value: 727.3767
       objectReference: {fileID: 0}
     - target: {fileID: 2461978408510840121, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_Pivot.x
@@ -8545,7 +8569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3167188286900578836, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 727.13855
+      value: 727.1834
       objectReference: {fileID: 0}
     - target: {fileID: 4254982031847341668, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_Name
@@ -8557,7 +8581,7 @@ PrefabInstance:
       objectReference: {fileID: 519420034}
     - target: {fileID: 8623498868084670522, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 727.02686
+      value: 727.0538
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

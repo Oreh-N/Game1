@@ -12,7 +12,7 @@ public class Quest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag != "Player" && coll.gameObject.GetComponent<PickUp>().id == items[questNum])
+        if (coll.tag != "Player" && coll.tag != "Enemy" && coll.gameObject.GetComponent<PickUp>().id == items[questNum])
         {
             questNum++;
             Destroy(coll.gameObject);

@@ -3285,7 +3285,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3482055464698383352}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: LoadMenuScene
         m_Mode: 1

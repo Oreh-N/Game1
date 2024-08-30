@@ -44,7 +44,6 @@ public class PlayerController  : MonoBehaviour
     {
         PlayerData data = SavingSystem.LoadPlayerState();
 
-        level = data.level;
         health.currHealth = data.health;
         speed = data.speed;
         damage = data.power;
@@ -102,7 +101,13 @@ public class PlayerController  : MonoBehaviour
             anim.SetBool("isRunning", false);
         else
             anim.SetBool("isRunning", true);
+
+        if (health.currHealth <= 0)
+        { Die(); }
     }
+
+    private void Die()
+    { LoadPlayerState(); }
 
     private void Move()
     {
