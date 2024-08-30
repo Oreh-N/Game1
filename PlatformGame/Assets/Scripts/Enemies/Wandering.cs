@@ -35,11 +35,8 @@ public class Wandering : MonoBehaviour
             float roamPosition = GetRoamingPosition();
 
 
-            if (roamPosition == 0)
-            {
-                enemy.GetAnimator().SetBool("isRunning", false);
-                enemyMovement.MoveTo(0);
-            }
+            if (roamPosition >= -0.1f && roamPosition <= 0.1f)
+            { enemy.GetAnimator().SetBool("isRunning", false); }
             else
             {
                 enemy.GetAnimator().SetBool("isRunning", true);
