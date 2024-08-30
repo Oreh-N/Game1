@@ -11,8 +11,8 @@ public class Wandering : MonoBehaviour
 
     private void Start()
     { 
-        enemyMovement = GetComponent<EnemyPathfinding>();
-        enemy = GetComponent<EnemyController>();
+        enemyMovement = transform.GetComponent<EnemyPathfinding>();
+        enemy = transform.GetComponent<EnemyController>();
         StartRoaming();
     }
 
@@ -35,7 +35,7 @@ public class Wandering : MonoBehaviour
             float roamPosition = GetRoamingPosition();
 
 
-            if (roamPosition >= -0.3f && roamPosition <= 0.3f)
+            if (roamPosition >= -0.2f && roamPosition <= 0.2f)
             { enemy.GetAnimator().SetBool("isRunning", false); }
             else
             {
@@ -54,5 +54,6 @@ public class Wandering : MonoBehaviour
     {   // the direction of the enemy's movement is towards the wall
         if (collision.gameObject.CompareTag("Wall"))
         { enemyMovement.MoveTo(-enemyMovement.moveDir); }
+        
     }
 }

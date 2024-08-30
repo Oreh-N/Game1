@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
 
     private KnockBack knockBack;
     private LootSpawn lootSpawn;
-    private Animator anim;
+    public Animator anim;
     bool isDead = false;
 
 
@@ -50,6 +50,7 @@ public class EnemyController : MonoBehaviour
         state = State.Dying;
         anim.SetBool("isDying", true);
         isDead = true;
+        DestroyEnemy();
     }
 
     public void DestroyEnemy()
