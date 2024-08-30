@@ -407,12 +407,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180136535155916494, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: damage
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8180136535155916494, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1382449273}
+    - target: {fileID: 8180136535155916494, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: attackCoolDown
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8430044705642889082, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: playerTransform
       value: 
@@ -1597,6 +1601,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1382449273}
+    - target: {fileID: 8180136535155916494, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
+      propertyPath: attackCoolDown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8430044705642889082, guid: 1fa006a0e7d016646b210dd8104a300b, type: 3}
       propertyPath: playerTransform
       value: 
