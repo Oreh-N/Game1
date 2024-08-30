@@ -35,7 +35,7 @@ public class Wandering : MonoBehaviour
             float roamPosition = GetRoamingPosition();
 
 
-            if (roamPosition >= -0.1f && roamPosition <= 0.1f)
+            if (roamPosition >= -0.3f && roamPosition <= 0.3f)
             { enemy.GetAnimator().SetBool("isRunning", false); }
             else
             {

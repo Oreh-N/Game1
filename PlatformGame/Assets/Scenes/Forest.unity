@@ -260,7 +260,7 @@ MonoBehaviour:
   goingRight: 0
   maxHealth: 100
   health: 100
-  knockBackForce: 1500
+  knockBackForce: 1000
   player: {fileID: 1725723374}
 --- !u!61 &79938885
 BoxCollider2D:
@@ -319,7 +319,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 25
@@ -366,7 +366,7 @@ MonoBehaviour:
   attackCoolDown: 1
   colliderDist: 1.2
   range: 1.06
-  damage: 15
+  damage: 20
   player: {fileID: 1725723374}
 --- !u!114 &79938892
 MonoBehaviour:
@@ -2063,7 +2063,7 @@ MonoBehaviour:
   attackCoolDown: 0.3
   colliderDist: 4
   range: 0.3
-  damage: 5
+  damage: 10
   player: {fileID: 1725723374}
 --- !u!114 &665552753
 MonoBehaviour:
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   goingRight: 0
   maxHealth: 100
   health: 100
-  knockBackForce: 1500
+  knockBackForce: 1000
   player: {fileID: 1725723374}
 --- !u!4 &685333780
 Transform:
@@ -10067,11 +10067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09330177
+      value: -0.07887936
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14934087
+      value: 0.14936662
       objectReference: {fileID: 0}
     - target: {fileID: 6664428338392705332, guid: b5af05b3b80cba24aad927fc73dd4705, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10402,6 +10402,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5365015086473435171, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5703960475122373236, guid: 026031b358dc65e4aaad153892b810ab, type: 3}
       propertyPath: m_Name
       value: BagCell_4
@@ -10687,7 +10691,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 933511189714738319, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 727.1612
+      value: 727.24243
       objectReference: {fileID: 0}
     - target: {fileID: 2461978408510840121, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_Pivot.x
@@ -10771,7 +10775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3167188286900578836, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 727.0487
+      value: 727.0995
       objectReference: {fileID: 0}
     - target: {fileID: 4254982031847341668, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_Name
@@ -10783,7 +10787,7 @@ PrefabInstance:
       objectReference: {fileID: 519420034}
     - target: {fileID: 8623498868084670522, guid: 8834dcf20020360478dbcc512d1057a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 726.9729
+      value: 727.0034
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
