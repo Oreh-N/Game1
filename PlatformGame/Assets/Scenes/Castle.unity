@@ -1603,7 +1603,7 @@ Transform:
   m_GameObject: {fileID: 583738240}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.65, y: 5.14, z: 0}
+  m_LocalPosition: {x: 26.06, y: 5.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5085,7 +5085,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000009536743, y: -0.19859028}
+  m_Offset: {x: -0.24974251, y: -0.19859028}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5096,7 +5096,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2690563, y: 3.5368223}
+  m_Size: {x: 1.7685394, y: 3.5368223}
   m_EdgeRadius: 0
 --- !u!1 &1157865810
 GameObject:
@@ -5910,7 +5910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6202823735506264081, guid: efb6c5743a8606c48b119f6a0126694f, type: 3}
       propertyPath: m_Size.x
-      value: 2.015396
+      value: 3.2178764
       objectReference: {fileID: 0}
     - target: {fileID: 6202823735506264081, guid: efb6c5743a8606c48b119f6a0126694f, type: 3}
       propertyPath: m_Size.y
@@ -5918,7 +5918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6202823735506264081, guid: efb6c5743a8606c48b119f6a0126694f, type: 3}
       propertyPath: m_Offset.x
-      value: 28.11621
+      value: 27.51497
       objectReference: {fileID: 0}
     - target: {fileID: 6202823735506264081, guid: efb6c5743a8606c48b119f6a0126694f, type: 3}
       propertyPath: m_Offset.y
@@ -6106,7 +6106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ccf0f143305614e98203fd0a2eaf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nxtSceneName: Menu
+  nxtSceneName: TheEnd
 --- !u!61 &1566295164
 BoxCollider2D:
   m_ObjectHideFlags: 0

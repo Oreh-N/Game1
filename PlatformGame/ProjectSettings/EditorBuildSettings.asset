@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle.unity
     guid: a988f06c4be5b7944b6a870989665acb
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: bf7c2c0ce67cb6e45ba5e457fb10ad6c
   m_configObjects: {}
