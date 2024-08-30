@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5439467727891718287}
   - component: {fileID: 554472793547346584}
   - component: {fileID: 4004446323266069002}
+  - component: {fileID: 1938878108574662552}
   m_Layer: 9
   m_Name: Box
   m_TagString: Interactable
@@ -170,3 +171,24 @@ MonoBehaviour:
   - {fileID: 1005650222375022082, guid: a12acb40d2cdac9469d433280fcf5e2a, type: 3}
   - {fileID: -6104732521065486336, guid: c592feb8aa8fbc04d8312c62a17f871b, type: 3}
   - {fileID: -6104732521065486336, guid: c592feb8aa8fbc04d8312c62a17f871b, type: 3}
+--- !u!95 &1938878108574662552
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175386379129237306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63f9fdf2f546190408bdfa3e093835f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

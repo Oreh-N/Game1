@@ -10,6 +10,7 @@ public class Looting : Interactable
     private LootSpawn spawn;
 
     private SpriteRenderer sr;
+    private Animator anim;
     public Sprite open;
     public Sprite close;
     private bool isOpen;
@@ -18,6 +19,7 @@ public class Looting : Interactable
     {
         sr = GetComponent<SpriteRenderer>();
         spawn = GetComponent<LootSpawn>();
+        anim = GetComponent<Animator>();
         sr.sprite = close;
         isOpen = false;
     }
@@ -26,8 +28,9 @@ public class Looting : Interactable
     {
         if (!isOpen)
         {
-            sr.sprite = open;
-            isOpen = !isOpen;
+            anim.SetTrigger("open");
+            //sr.sprite = open;
+            isOpen = true;
         }
         else { return; } //sr.sprite = close;
 

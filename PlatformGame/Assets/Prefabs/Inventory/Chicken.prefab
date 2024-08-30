@@ -187,4 +187,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 8299227930641256033}
-  dropChance: 50
+  dropChance: 40
