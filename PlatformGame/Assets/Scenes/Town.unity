@@ -6727,7 +6727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004802785}
   - component: {fileID: 2004802786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
